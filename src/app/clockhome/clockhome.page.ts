@@ -1,16 +1,20 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { Geolocation } from '@capacitor/geolocation';
 @Component({
 selector: 'app-clockhome',
 templateUrl: 'clockhome.page.html',
-styleUrls: ['clockhome.page.scss'],
+styleUrls: ['./clockhome.page.scss'],
 })
 
 export class ClockhomePage implements OnInit {
     today: string = ''; // initializes a string variable to hold the selected day
     thisMonth: string = ''; // initializes a string variable to hold the selected month
     thisYear: string = ''; // initializes a string variable to hold the selected year
+    coordinates: any = "";
+lat: string = "";
+long: String = "";
  
     //initialises storage
     constructor(private storage: Storage) { }
@@ -26,5 +30,10 @@ export class ClockhomePage implements OnInit {
     this.thisYear = await this.storage.get('clockyear'); // retrieves the selected year from storage and sets it to the "thisYear" variable
     
 }
+async getGPS() {
+  this.coordinates = await Geolocation.getCurrentPosition();
+  this.lat = this.coordinates.coords.latitude;
+  this.long = this.coordinates.coords.longitude;
+  }
     }
     

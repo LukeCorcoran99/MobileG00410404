@@ -25,5 +25,10 @@
   max="2025-12-31"
   placeholder="Select Date and Time">
 </ion-datetime>
+<div>
+  <ion-button (click)="getGPS()">Your location:</ion-button>
+  <p>Latitude: {{lat}} </p>
+<p>Longitude: {{long}}</p>
+</div>
   </ion-content>
   

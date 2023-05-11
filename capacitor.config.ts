@@ -5,6 +5,7 @@ const config: CapacitorConfig = {
   appName: 'my-test-app',
   webDir: 'www',
   bundledWebRuntime: false
+  
 };
 
 export default config;
