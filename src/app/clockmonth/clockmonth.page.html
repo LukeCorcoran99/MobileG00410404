@@ -1,13 +1,23 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>clockmonth</ion-title>
+    <ion-back-button></ion-back-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">clockmonth</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+
+<ion-content>
+  <ion-list>
+    <!-- Binds the selected radio button to the "thisMonth" variable using ngModel -->
+    <ion-radio-group [(ngModel)]="thisMonth">
+           <!-- Creates an item for each month in "monthsData" array -->
+           <ion-item *ngFor="let month of monthsData">    
+             <!-- displays the label for the radio button with the current month -->
+            <ion-label>{{ month }}</ion-label>
+            <!-- Creates the radio button with the current month as its value -->
+            <ion-radio slot="start" [value]="month"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <ion-button (click)="saveMonth()">Save</ion-button>
+  </ion-content>
+  

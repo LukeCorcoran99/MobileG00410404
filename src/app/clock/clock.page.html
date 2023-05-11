@@ -1,13 +1,26 @@
-<ion-header [translucent]="true">
+
+
+<ion-header>
   <ion-toolbar>
-    <ion-title>clock</ion-title>
+    <ion-back-button></ion-back-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">clock</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+
+<ion-content>
+  <ion-list>
+    <!-- Binds the selected radio button to the "today" variable using ngModel -->
+    <ion-radio-group [(ngModel)]="today">
+           <!-- Creates an item for each day in "daysData" array -->
+           <ion-item *ngFor="let day of daysData">    
+             <!-- displays the label for the radio button with the current day -->
+            <ion-label>{{ day }}</ion-label>
+            <!-- Creates the radio button with the current day as its value -->
+            <ion-radio slot="start" [value]="day"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <ion-button (click)="saveDay()">Save</ion-button>
+  </ion-content>
+  
+

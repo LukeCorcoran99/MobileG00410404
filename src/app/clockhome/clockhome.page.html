@@ -1,13 +1,29 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>clockhome</ion-title>
+    <ion-back-button></ion-back-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">clockhome</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+
+<ion-content>
+  <!-- Displays the title with the current selected day from "today" variable -->
+  <h3>Today is: {{today}}</h3>
+  <!-- Creates a button that routes to the "clock" page when clicked -->
+  <ion-button routerLink="/clock">Select Day</ion-button>
+  <!-- Displays the title with the current selected day from "today" variable -->
+  <h3>This month is: {{thisMonth}}</h3>
+  <!-- Creates a button that routes to the "clock" page when clicked -->
+  <ion-button routerLink="/clockmonth">Select Month</ion-button>
+  <!-- Displays the title with the current selected day from "today" variable -->
+  <h3>This year is: {{thisYear}}</h3>
+  <!-- Creates a button that routes to the "clock" page when clicked -->
+  <ion-button routerLink="/clockyear">Select Year</ion-button>
+  <!-- Allows user to select date and time -->
+  <ion-datetime 
+  display-format="DD/MM/YYYY HH:mm:ss"
+  min="2010-01-01"
+  max="2025-12-31"
+  placeholder="Select Date and Time">
+</ion-datetime>
+  </ion-content>
+  

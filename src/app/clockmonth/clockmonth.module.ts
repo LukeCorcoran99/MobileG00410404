@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -5,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ClockmonthPageRoutingModule } from './clockmonth-routing.module';
-
+import { HttpClientModule } from '@angular/common/http';
 import { ClockmonthPage } from './clockmonth.page';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ClockmonthPage } from './clockmonth.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ClockmonthPageRoutingModule
+    ClockmonthPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [ClockmonthPage]
 })
